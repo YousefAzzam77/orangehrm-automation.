@@ -1,14 +1,14 @@
 # OrangeHRM Automation
 
-A comprehensive test automation framework for OrangeHRM using Selenium, TestNG, and REST Assured.
+A comprehensive UI test automation framework for OrangeHRM using Selenium WebDriver and TestNG.
 
 ## 📋 Project Overview
 
-This project demonstrates a hybrid approach to test automation, combining:
+This project demonstrates a robust UI automation approach for testing OrangeHRM, featuring:
 - **UI Automation** with Selenium WebDriver
-- **API Testing** with REST Assured
 - **Page Object Model** design pattern
 - **Data-Driven Testing** approach
+- **Explicit Waits** for reliable test execution
 
 ## 🏗️ Project Structure
 
@@ -17,10 +17,7 @@ orangehrm-automation/
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   ├── api/
-│   │   │   │   └── CandidateAPI.java          # API calls for Recruitment module
 │   │   │   ├── base/
-│   │   │   │   ├── BaseAPI.java               # Base API configuration
 │   │   │   │   └── BaseTest.java              # Base test setup and teardown
 │   │   │   ├── pages/
 │   │   │   │   ├── AdminPage.java             # Admin page object
@@ -35,8 +32,7 @@ orangehrm-automation/
 │   └── test/
 │       └── java/
 │           └── tests/
-│               ├── AdminTest.java             # Admin module tests
-│               └── HybridTest.java            # API + UI integration tests
+│               └── AdminTest.java             # Admin module tests
 └── pom.xml                                    # Maven configuration
 
 ```
@@ -46,14 +42,12 @@ orangehrm-automation/
 - **Java 25**
 - **Selenium 4.41.0** - Web browser automation
 - **TestNG 7.12.0** - Test framework
-- **REST Assured 6.0.0** - API testing
 - **Maven** - Build tool
 
 ## 📦 Dependencies
 
 - Selenium WebDriver
 - TestNG
-- REST Assured
 - Apache Commons Lang
 
 ## ⚙️ Setup & Installation
@@ -117,15 +111,6 @@ browser=chrome
   4. Search for the newly created user
   5. Delete the user and verify deletion
 
-### HybridTest.java
-- **Test:** `testAPI_UI_Integration()`
-- **Description:** Demonstrates API + UI integration testing
-- **Steps:**
-  1. Login via API using Basic Auth
-  2. Add a candidate via REST API
-  3. Login to UI and verify candidate exists
-  4. Delete candidate via API
-
 ## 🎯 Key Features
 
 - ✅ **Page Object Model** - Maintainable and scalable page objects
@@ -133,14 +118,9 @@ browser=chrome
 - ✅ **Explicit Waits** - WaitUtils for reliable element interactions
 - ✅ **Data Generation** - Random test data generation
 - ✅ **Configuration Management** - Externalized configuration properties
-- ✅ **API & UI Testing** - Combined approach for comprehensive testing
-- ✅ **Basic Authentication** - Secure API testing with credentials
+- ✅ **TestNG Framework** - Comprehensive test execution and reporting
 
 ## 🔐 Authentication
-
-### API Authentication
-- Uses **Basic Auth** (Base64 encoded credentials)
-- Authorization header: `Authorization: Bearer <token>` or Basic auth
 
 ### UI Authentication
 - Standard login form with username/password
@@ -170,7 +150,6 @@ After running tests, find reports in:
 
 - [Selenium Documentation](https://selenium.dev/documentation/)
 - [TestNG Documentation](https://testng.org/doc/)
-- [REST Assured Documentation](https://rest-assured.io/)
 
 ## 👤 Author
 
@@ -187,5 +166,3 @@ Contributions are welcome! Feel free to submit pull requests or open issues.
 ---
 
 **Note:** This project uses the OrangeHRM demo instance for testing. For production testing, configure your own OrangeHRM instance in the `config.properties` file.
-
-"# orangehrm-automation." 
